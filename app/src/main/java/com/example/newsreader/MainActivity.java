@@ -43,11 +43,11 @@ public class MainActivity extends AppCompatActivity {
             ParseNews parseNews = new ParseNews();
             parseNews.parse(s);
 
-            ArrayAdapter<News> arrayAdapter = new ArrayAdapter<>(
-                    MainActivity.this, R.layout.news_item, parseNews.getNewsArrayList()
+            NewsAdapter newsAdapter = new NewsAdapter(
+                    MainActivity.this, R.layout.news_layout, parseNews.getNewsArrayList()
             );
 
-            newsList.setAdapter(arrayAdapter);
+            newsList.setAdapter(newsAdapter);
         }
 
         @Override
